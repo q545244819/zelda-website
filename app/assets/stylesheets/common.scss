@@ -82,3 +82,39 @@ body {
     margin: 0;
   }
 }
+
+.categories-item-wrap {
+  margin: 15px 0;
+
+  &:hover > .image {
+    background-size: 150%;
+  }
+
+  & > .info {
+    margin: 0;
+    color: #000;
+    font-size: 14px;
+  }
+
+  & > .image {
+    transition: background-size 1s;
+    width: 100%;
+    height: 250px;
+    background-repeat: no-repeat;
+    background-size: 130%;
+    background-position: center center;
+  }
+
+  & > .title {
+    box-sizing: border-box;
+    display: block;
+    margin: 10px 0;
+    border-left: 5px solid #0e90d2;
+    padding-left: 1em;
+    color: #000;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

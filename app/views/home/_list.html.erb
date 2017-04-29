@@ -1,11 +1,7 @@
 <section class="am-container">
   <section class="am-g">
     <% for item in 1..6 %>
-      <div class="am-u-sm-4 hot-news-item-wrap">
-        <p class="info am-cf">2017-04-29<span class="am-badge am-badge-primary am-radius am-fr">机器学习</span></p>
-        <div class="image" style="background-image: url(http://ww1.sinaimg.cn/large/6d693dfegy1ff3s67azjuj207n0533ya.jpg)"></div>
-        <a href="###" class="title">ZEALER-FIX 主板体验之 iGame Z270 烈焰战神 X</a>
-      </div>
+      <%= render partial: 'components/item', local: {} %>
     <% end %>
   </section>
   <a class="am-btn am-btn-primary am-radius btn-more" href="###">更多</a>

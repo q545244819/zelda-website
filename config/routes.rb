@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-  root 'home#index'  
+  root 'home#index'
+
+  get 'categories/:id', to: 'categories#index'
 end

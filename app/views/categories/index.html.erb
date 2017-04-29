@@ -1,0 +1,19 @@
+<section class="am-container">
+  <h1 class="categories-tile">无人机</h1>
+
+  <section class="am-g">
+    <% for item in 1..9 %>
+      <%= render partial: 'components/item', local: {} %>
+    <% end %>
+  </section>
+
+  <ul class="am-pagination am-pagination-centered">
+    <li class="am-disabled"><a href="#">&laquo;</a></li>
+    <li class="am-active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li><a href="#">4</a></li>
+    <li><a href="#">5</a></li>
+    <li><a href="#">&raquo;</a></li>
+  </ul>
+</section>
