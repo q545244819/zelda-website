@@ -1,1 +1,19 @@
 <%= render 'hot-news' %>
+
+<section class="classification">
+  <div class="image uav">uav</div>
+  <h2 class="text">无人机</h2>
+</section>
+<%= render partial: 'list', local: {title: ""} %>
+
+<section class="classification">
+  <div class="image ml">machine learning</div>
+  <h2 class="text">机器学习</h2>
+</section>
+<%= render partial: 'list', local: {title: ""} %>
+
+<section class="classification">
+  <div class="image ai">artificial intelligence</div>
+  <h2 class="text">人工智能</h2>
+</section>
+<%= render partial: 'list', local: {title: ""} %>

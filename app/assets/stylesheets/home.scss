@@ -59,7 +59,7 @@
   margin: 15px 0;
 
   &:hover > .image {
-    background-size: 120%;
+    background-size: 150%;
   }
 
   & > .info {
@@ -73,19 +73,45 @@
     width: 100%;
     height: 250px;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 130%;
     background-position: center center;
   }
 
   & > .title {
+    box-sizing: border-box;
     display: block;
     margin: 10px 0;
     border-left: 5px solid #0e90d2;
-    text-indent: 1em;
+    padding-left: 1em;
     color: #000;
     
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+.classification {
+  text-align: center;
+
+  & > .image {
+    width: 100%;
+    height: 250px;
+    background-position: center center;
+    background-size: cover;
+    font-size: 72px;
+    line-height: 250px;
+    color: #fff;
+    text-transform: uppercase;
+
+    &.uav {
+      background-image: url(1-96.jpg);
+    }
+    &.ml {
+      background-image: url(ml.jpg);
+    }
+    &.ai {
+      background-image: url(ai.jpg);
     }
   }
 }
