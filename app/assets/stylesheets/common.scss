@@ -1,8 +1,23 @@
+body {
+  padding-top: 81px;
+}
+
 .am-topbar-nav > li:hover > a:after {
   opacity: 0;
 }
 .am-topbar-nav > li.am-active > a:after {
   opacity: 0;
+}
+
+.am-topbar-customer-wrap {
+  position: fixed;
+  z-index: 10;  
+  top: 0;
+  left: 0;
+  width: 100%;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, .9);
+  border-bottom: 1px solid #ddd;
 }
 
 .am-topbar-customer {
@@ -28,12 +43,6 @@
   border-bottom: none;  
   text-align: center;
   background-color: transparent;
-}
-
-.am-topbar-customer-wrap {
-  font-size: 14px;
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
 }
 
 .footer {
