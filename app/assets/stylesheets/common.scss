@@ -1,0 +1,38 @@
+.am-topbar-nav > li:hover > a:after {
+  opacity: 0;
+}
+.am-topbar-nav > li.am-active > a:after {
+  opacity: 0;
+}
+
+
+.am-topbar-customer {
+  & * {
+    display: inline-block;
+  }
+
+  & > h1 {
+    font-size: 36px;
+  }
+
+  & .am-text-ir {
+    display: block;
+    height: 50px;
+    width: 144px;
+    background: url(logo.jpg) no-repeat left center;
+    background-size: 144px 50px;
+  }
+  
+  width: 800px;
+  margin: 0 auto;
+  padding: 15px 0;
+  border-bottom: none;  
+  text-align: center;
+  background-color: transparent;
+}
+
+.am-topbar-customer-wrap {
+  font-size: 14px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
