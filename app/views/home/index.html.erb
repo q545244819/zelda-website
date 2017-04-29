@@ -1,9 +1,22 @@
-<%= render 'hot-news' %>
+<%= render partial: 'hot-news', locals: {articles: @articles['hot']} %>
 
 <% @categories.each do |item| %>
   <section class="classification" id="<%= item.name %>">
     <div class="image" style="background-image: url(<%= item.image %>)"><%= item.description %></div>
     <h2 class="text"><%= item.name %></h2>
   </section>
+  
+  <% if @articles[item.id].length > 0 %>
+    <section class="am-container">
+      <section class="am-g">
+        <% @articles[item.id].each do |item| %>
+          <%= render partial: 'components/item', locals: {item: item} %>
+        <% end %>
+      </section>
+      <a class="am-btn am-btn-primary am-radius btn-more" href="###">更多</a>
+    </section>
+  <% else %>
+     <%= render 'nothing' %>
+  <% end %>
 <% end %>
 
