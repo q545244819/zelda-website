@@ -1,3 +1,56 @@
-// Place all the styles related to the Home controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.hot-news-wrap {
+  & > a {
+    transition: background-size 1s;
+    position: relative;
+    height: 400px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    overflow : hidden;
+
+    &.primary {
+      background-size: 100%;
+
+      &:hover {
+        background-size: 120%;
+      }
+    }
+
+    &.second {
+      background-size: 200%;
+
+      &:hover {
+        background-size: 220%;
+      }
+    }
+
+    & > .info-warp {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      padding: 0 10px 10px;
+      width: 100%;
+      background: rgba(0, 0, 0, .5);
+
+      & > .title {
+        margin: 0;
+        color: #fff;
+        font-size: 32px;
+        text-decoration: underline;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+      }
+      
+      & > .sub-info {
+        margin: 5px 0 0;
+        color: #ddd;
+        font-size: 12px;
+
+        & > .am-badge {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+}
