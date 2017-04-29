@@ -1,31 +1,9 @@
 <%= render 'hot-news' %>
 
-<section class="classification" id="uav">
-  <div class="image uav">uav</div>
-  <h2 class="text">无人机</h2>
-</section>
-<% if @uav %>
-  <%= render partial: 'list', local: {title: ""} %>
-<% else %>
-  <%= render 'nothing' %>
+<% @categories.each do |item| %>
+  <section class="classification" id="<%= item.name %>">
+    <div class="image" style="background-image: url(<%= item.image %>)"><%= item.description %></div>
+    <h2 class="text"><%= item.name %></h2>
+  </section>
 <% end %>
 
-<section class="classification" id="ml">
-  <div class="image ml">machine learning</div>
-  <h2 class="text">机器学习</h2>
-</section>
-<% if @ml %>
-  <%= render partial: 'list', local: {title: ""} %>
-<% else %>
-  <%= render partial: 'nothing' %>
-<% end %>
-
-<section class="classification" id="ai">
-  <div class="image ai">artificial intelligence</div>
-  <h2 class="text">人工智能</h2>
-</section>
-<% if @ai %>
-  <%= render partial: 'list', local: {title: ""} %>
-<% else %>
-  <%= render partial: 'nothing' %>
-<% end %>
