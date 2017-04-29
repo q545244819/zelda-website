@@ -37,6 +37,14 @@ body {
     background-size: 144px 50px;
   }
   
+  & .am-nav > li > a.am-active,
+  & .am-nav > li > a:focus,
+  & .am-nav > li > a:hover {
+    border-radius: 0;
+    color: #0e90d2;
+    background: 0 0;
+  }
+  
   width: 800px;
   margin: 0 auto;
   padding: 15px 0;
