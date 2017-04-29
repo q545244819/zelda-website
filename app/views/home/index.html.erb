@@ -4,16 +4,28 @@
   <div class="image uav">uav</div>
   <h2 class="text">无人机</h2>
 </section>
-<%= render partial: 'list', local: {title: ""} %>
+<% if @uav %>
+  <%= render partial: 'list', local: {title: ""} %>
+<% else %>
+  <%= render 'nothing' %>
+<% end %>
 
 <section class="classification" id="ml">
   <div class="image ml">machine learning</div>
   <h2 class="text">机器学习</h2>
 </section>
-<%= render partial: 'list', local: {title: ""} %>
+<% if @ml %>
+  <%= render partial: 'list', local: {title: ""} %>
+<% else %>
+  <%= render partial: 'nothing' %>
+<% end %>
 
 <section class="classification" id="ai">
   <div class="image ai">artificial intelligence</div>
   <h2 class="text">人工智能</h2>
 </section>
-<%= render partial: 'list', local: {title: ""} %>
+<% if @ai %>
+  <%= render partial: 'list', local: {title: ""} %>
+<% else %>
+  <%= render partial: 'nothing' %>
+<% end %>
