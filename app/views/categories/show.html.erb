@@ -1,11 +1,14 @@
 <section class="am-container">
   <h1 class="categories-tile"><%= @category.name %></h1>
-
-  <section class="am-g">
-    <% @articles.each do |item| %>
-      <%= render partial: 'components/item', locals: {item: item} %>
-    <% end %>
-  </section>
+  <% if @articles.length > 0 %>
+    <section class="am-g">
+      <% @articles.each do |item| %>
+        <%= render partial: 'components/item', locals: {item: item} %>
+      <% end %>
+    </section>
+  <% else %>
+    <%= render 'components/nothing' %>    
+  <% end %>
 
   <%= will_paginate @articles, class: 'am-pagination am-pagination-centered', previous_label: '上一页', next_label: '下一页' %>
 </section>
