@@ -1,9 +1,9 @@
 <section class="am-g hot-news-wrap" id="home">
   <% for i in 1..3 %>
     <% if i == 1 %>
-    <a style="background-image: url(http://ww1.sinaimg.cn/large/6d693dfegy1ff3s67azjuj207n0533ya.jpg)" class="am-u-sm-6 primary" href="/articles/<%= articles[i].id %>">    
+    <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-6 primary" href="/articles/<%= articles[i].id %>">    
     <% else %>
-    <a style="background-image: url(http://ww1.sinaimg.cn/large/6d693dfegy1ff3s67azjuj207n0533ya.jpg)" class="am-u-sm-3 primary" href="/articles/<%= articles[i].id %>">        
+    <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-3 primary" href="/articles/<%= articles[i].id %>">        
     <% end %>
       <div class="info-warp">
         <h1 class="title"><%= articles[i].title %></h1>
@@ -19,7 +19,7 @@
       <% for i in 4..5 %>
         <div class="am-u-sm-6 categories-item-wrap">
           <p class="info am-cf"><%= articles[i].created_at.to_formatted_s(:db) %><span class="am-badge am-badge-primary am-radius am-fr"><%= articles[i].category.name %></span></p>
-          <div class="image" style="background-image: url(http://ww1.sinaimg.cn/large/6d693dfegy1ff3s67azjuj207n0533ya.jpg)"></div>
+          <div class="image" <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %>></div>
           <a href="###" class="title"><%= articles[i].title %></a>
         </div>
       <% end %>
