@@ -3,7 +3,7 @@
     <% if i == 0 %>
     <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-6 primary" href="/articles/<%= articles[i].id %>">    
     <% else %>
-    <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-3 primary" href="/articles/<%= articles[i].id %>">        
+    <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-3 second" href="/articles/<%= articles[i].id %>">        
     <% end %>
       <div class="info-warp">
         <h1 class="title"><%= articles[i].title %></h1>
