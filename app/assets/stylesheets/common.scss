@@ -86,6 +86,10 @@ body {
 .categories-item-wrap {
   margin: 15px 0;
 
+  &:last-child {
+    float: left!important;
+  }
+
   &:hover > .image {
     background-size: 150%;
   }
