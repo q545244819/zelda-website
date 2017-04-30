@@ -13,7 +13,9 @@
           <%= render partial: 'components/item', locals: {item: item} %>
         <% end %>
       </section>
-      <a class="am-btn am-btn-primary am-radius btn-more" href="###">更多</a>
+      <% if @articles[item.id].length == 6 %>
+        <a class="am-btn am-btn-primary am-radius btn-more" href="/categories/<%= item.id %>">更多</a>      
+      <% end %>
     </section>
   <% else %>
      <%= render 'nothing' %>

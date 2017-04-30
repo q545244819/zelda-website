@@ -7,7 +7,7 @@
     <% end %>
       <div class="info-warp">
         <h1 class="title"><%= articles[i].title %></h1>
-        <p class="sub-info">发布时间：2017-01-01<span class="am-badge am-badge-primary am-radius"><%= articles[i].category.name %></span></p>
+        <p class="sub-info">发布时间：<%= articles[i].created_at.to_formatted_s(:db) %><span class="am-badge am-badge-primary am-radius"><%= articles[i].category.name %></span></p>
       </div>
     </a>
   <% end %>
@@ -18,7 +18,7 @@
     <section class="am-g">
       <% for i in 4..5 %>
         <div class="am-u-sm-6 categories-item-wrap">
-          <p class="info am-cf">2017-04-29<span class="am-badge am-badge-primary am-radius am-fr"><%= articles[i].category.name %></span></p>
+          <p class="info am-cf"><%= articles[i].created_at.to_formatted_s(:db) %><span class="am-badge am-badge-primary am-radius am-fr"><%= articles[i].category.name %></span></p>
           <div class="image" style="background-image: url(http://ww1.sinaimg.cn/large/6d693dfegy1ff3s67azjuj207n0533ya.jpg)"></div>
           <a href="###" class="title"><%= articles[i].title %></a>
         </div>
