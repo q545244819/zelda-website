@@ -1,9 +1,9 @@
 <section class="am-container">
-  <h1 class="categories-tile"></h1>
+  <h1 class="categories-tile"><%= @category.name %></h1>
 
   <section class="am-g">
-    <% for item in 1..9 %>
-      <%= render partial: 'components/item', local: {} %>
+    <% @articles.each do |item| %>
+      <%= render partial: 'components/item', locals: {item: item} %>
     <% end %>
   </section>
 
