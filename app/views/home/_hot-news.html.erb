@@ -20,7 +20,7 @@
         <div class="am-u-sm-6 categories-item-wrap">
           <p class="info am-cf"><%= articles[i].created_at.to_formatted_s(:db) %><span class="am-badge am-badge-primary am-radius am-fr"><%= articles[i].category.name %></span></p>
           <div class="image" <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %>></div>
-          <a href="###" class="title"><%= articles[i].title %></a>
+          <a href="/articles/<%= articles[i].id %>" class="title"><%= articles[i].title %></a>
         </div>
       <% end %>
     </section>
