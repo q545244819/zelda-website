@@ -5,6 +5,8 @@
         <th>ID</th>
         <th>标题</th>
         <th>分类</th>
+        <th>创建时间</th>
+        <th>最近修改时间</th>
         <th>操作</th>
       </tr>
     </thead>
@@ -13,10 +15,12 @@
         <tr>
           <td><%= item.id %></td>
           <td><%= item.title %></td>
-          <td><%= item.category.name %></td>
+          <td><%= item.created_at.to_formatted_s(:db) %></td>
+          <td><%= item.updated_at.to_formatted_s(:db) %></td>
+          <td><span class="am-badge am-badge-primary am-radius"><%= item.category.name %></span></td>
           <td>
-            <a href="###" class="am-btn am-btn-primary">编辑</a>
-            <a href="###" class="am-btn am-btn-danger">删除</a>
+            <a href="###" class="am-btn am-btn-primary am-radius am-btn-xs">编辑</a>
+            <a href="###" class="am-btn am-btn-danger am-radius am-btn-xs">删除</a>
           </td>
         </tr>
       <% end %>

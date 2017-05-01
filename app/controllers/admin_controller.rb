@@ -10,7 +10,7 @@ class AdminController < ApplicationController
   def articles
     @name = 'articles'
     @articles = Article.order(created_at: :desc)
-      .select('id', 'title', 'image', 'category_id')
+      .select('id', 'title', 'image', 'category_id', 'created_at', 'updated_at')
       .limit(20)
       .paginate(page: params[:page || 1])
   end
