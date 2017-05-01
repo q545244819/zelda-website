@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post '/admin/articles/new', to: 'admin#article_create'
   get '/admin/articles/:id', to: 'admin#article_edit'
   post '/admin/articles/:id', to: 'admin#article_update'
+  get '/admin/articles/:id/remove', to: 'admin#article_destroy'
   get '/admin/categories', to: 'admin#categories'
   post '/register', to: 'users#register'
   post '/login', to: 'users#login'

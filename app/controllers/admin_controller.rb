@@ -66,6 +66,19 @@ class AdminController < ApplicationController
     end
   end
 
+  def article_destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+
+    if @article
+      flash[:success] = '删除文章成功！'
+      redirect_to '/admin/articles'
+    else
+      flash[:error] = '删除文章失败！'
+      redirect_to '/admin/articles'
+    end
+  end
+
   def categories
     @name = 'categories'
     @categories = Category.order(created_at: :desc)
