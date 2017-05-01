@@ -6,8 +6,8 @@
 
     <div class="am-collapse am-topbar-collapse am-topbar-left" id="doc-topbar-collapse">
       <ul class="am-nav am-nav-pills am-topbar-nav">
-        <li><a href="/admin/articles">文章</a></li>
-        <li><a href="/admin/articles">类别</a></li>
+        <li <% if @name == 'articles' %> class="am-active" <% end %>><a href="/admin/articles">文章</a></li>
+        <li <% if @name == 'categories' %> class="am-active" <% end %>><a href="/admin/categories">类别</a></li>
       </ul>
     </div>
     
