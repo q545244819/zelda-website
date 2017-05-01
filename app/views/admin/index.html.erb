@@ -1,19 +1,5 @@
-<% if flash[:error] %>
-  <div class="am-alert am-alert-danger" data-am-alert>
-    <button type="button" class="am-close">&times;</button>
-    <p><%= flash[:error] %></p>
-  </div>
-<% end %>
-
-<% if flash[:success] %>
-  <div class="am-alert am-alert-success" data-am-alert>
-    <button type="button" class="am-close">&times;</button>
-    <p><%= flash[:success] %></p>
-  </div>
-<% end %>
-
 <div class="admin-login-wrap">
-  <%= form_for 'users', url: @path, method: 'post', html: { class: 'am-form' } do |f| %>
+  <%= form_for 'users', url: @path, method: 'post', html: { class: 'am-form', data-am-validator } do |f| %>
     <fieldset>
       <legend>
         <% if @path == '/login' %>

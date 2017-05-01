@@ -14,13 +14,37 @@
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag 'normalize', 'amazeui.min', 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% if @name == 'article_edit' || @name == 'article_new' %>
+      <%= stylesheet_link_tag 'umeditor', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <% end %>
   </head>
 
   <body>
+    <% if flash[:error] %>
+      <div class="am-alert am-alert-danger admin-alert" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+
+    <% if flash[:success] %>
+      <div class="am-alert am-alert-success admin-alert" data-am-alert>
+        <button type="button" class="am-close">&times;</button>
+        <p><%= flash[:success] %></p>
+      </div>
+    <% end %>
     <% if session[:user] %>
       <%= render "components/topbar-admin" %>      
     <% end %>
     <%= yield %>
     <%= javascript_include_tag 'jquery.min', 'amazeui.min', 'data-turbolinks-track': 'reload' %>
+    <% if @name == 'article_edit' || @name == 'article_new' %>
+      <%= javascript_include_tag 'template.min', 'umeditor.config', 'editor_api', 'data-turbolinks-track': 'reload' %>
+      <script>
+        $(function () {
+          UM.getEditor('myEditor')
+        })
+      </script>
+    <% end %>
   </body>
 </html>
