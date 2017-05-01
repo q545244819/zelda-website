@@ -1,5 +1,5 @@
 <div class="am-u-sm-4 categories-item-wrap">
-  <p class="info am-cf"><%= item.created_at.to_formatted_s(:db) %><span class="am-badge am-badge-primary am-radius am-fr"><%= item.category.name %></span></p>
+  <p class="info am-cf"><%= item.created_at.to_formatted_s(:db) %><span class="am-fr"><%= item.category.name %></span></p>
   <a href="/articles/<%= item.id %>">
     <div class="image" <% if item.image %>style="background-image: url(<%= item.image %>)"<% end %>></div>
     <p class="title"><%= item.title %></p>

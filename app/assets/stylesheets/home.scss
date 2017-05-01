@@ -28,7 +28,7 @@
       position: absolute;
       left: 0;
       bottom: 0;
-      padding: 0 10px 10px;
+      padding: 10px 1.8em 20px;
       width: 100%;
       background: rgba(0, 0, 0, .5);
 
@@ -37,8 +37,7 @@
         max-height: 102px;
         margin: 0;
         color: #fff;
-        font-size: 32px;
-        text-decoration: underline;
+        font-size: 28px;
         text-overflow: ellipsis;
         display: -webkit-box;
         -webkit-line-clamp: 2;
@@ -60,6 +59,10 @@
 
 .hot-news-second-wrap {
   margin: 35px 0;
+
+  & .image {
+    height: 270px!important;
+  }
 }
 
 .classification {
