@@ -11,5 +11,6 @@ Rails.application.config.assets.version = '1.0'
 Rails.application.config.assets.precompile += %w( normalize.css )
 Rails.application.config.assets.precompile += %w( amazeui.min.css )
 Rails.application.config.assets.precompile += %w( common.css )
+Rails.application.config.assets.precompile += %w( admin.scss )
 Rails.application.config.assets.precompile += %w( jquery.min.js )
 Rails.application.config.assets.precompile += %w( amazeui.min.js )

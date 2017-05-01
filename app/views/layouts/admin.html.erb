@@ -6,20 +6,21 @@
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>ZALDA</title>
+    <title>ZALDA 管理系统</title>
     <!-- Set render engine for 360 browser -->
     <meta name="renderer" content="webkit">
 
     <!-- No Baidu Siteapp-->
     <meta http-equiv="Cache-Control" content="no-siteapp"/>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag 'normalize', 'amazeui.min', 'common', 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'normalize', 'amazeui.min', 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= render "components/topbar" %>
+    <% if session[:user] %>
+      <%= render "components/topbar-admin" %>      
+    <% end %>
     <%= yield %>
-    <%= render "components/footer" %>    
-    <%= javascript_include_tag 'jquery.min', 'amazeui.min', 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'jquery.min', 'amazeui.min', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

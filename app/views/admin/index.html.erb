@@ -1,0 +1,42 @@
+<% if flash[:error] %>
+  <div class="am-alert am-alert-danger" data-am-alert>
+    <button type="button" class="am-close">&times;</button>
+    <p><%= flash[:error] %></p>
+  </div>
+<% end %>
+
+<% if flash[:success] %>
+  <div class="am-alert am-alert-success" data-am-alert>
+    <button type="button" class="am-close">&times;</button>
+    <p><%= flash[:success] %></p>
+  </div>
+<% end %>
+
+<div class="admin-login-wrap">
+  <%= form_for 'users', url: @path, method: 'post', html: { class: 'am-form' } do |f| %>
+    <fieldset>
+      <legend>
+        <% if @path == '/login' %>
+          登录
+        <% elsif @path == '/register' %>
+          注册
+        <% end %>
+      </legend>
+
+      <div class="am-form-group">
+        <%= label_tag :username, '用户名' %>
+        <%= text_field_tag :username %>
+      </div>
+      <div class="am-form-group">
+        <%= label_tag :password, '密码' %>
+        <%= password_field_tag :password %>
+      </div>
+
+      <% if @path == '/login' %>
+        <%= f.submit "登录", class: 'am-btn am-btn-primary' %>        
+      <% elsif @path == '/register' %>
+        <%= f.submit "注册", class: 'am-btn am-btn-primary' %>        
+      <% end %>
+    </fieldset>
+  <% end %>
+</div>

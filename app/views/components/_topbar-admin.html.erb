@@ -1,0 +1,19 @@
+<header class="am-topbar-customer-wrap">
+  <header class="am-topbar am-topbar-inverse am-topbar-customer">
+    <h1 class="am-topbar-brand">
+      <a href="/">ZALDA 管理系统</a>
+    </h1>
+
+    <div class="am-collapse am-topbar-collapse am-topbar-left" id="doc-topbar-collapse">
+      <ul class="am-nav am-nav-pills am-topbar-nav">
+        <li><a href="/admin/articles">文章</a></li>
+        <li><a href="/admin/articles">类别</a></li>
+      </ul>
+    </div>
+    
+    <div class="am-topbar-right">
+      <a class="am-btn am-btn-secondary am-topbar-btn am-btn-sm">用户：<%= session[:user]['username'] %></a>
+      <a href="/logout" class="am-btn am-btn-danger am-topbar-btn am-btn-sm">登出</a>
+    </div>
+  </header>
+</header>
