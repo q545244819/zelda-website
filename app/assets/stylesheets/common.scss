@@ -1,3 +1,5 @@
+$color: #ce1429;
+
 body {
   padding-top: 81px;
 }
@@ -7,6 +9,9 @@ body {
 }
 .am-topbar-nav > li.am-active > a:after {
   opacity: 0;
+}
+.am-badge-primary {
+  background-color: $color;
 }
 
 .am-topbar-customer-wrap {
@@ -33,7 +38,7 @@ body {
     display: block;
     height: 50px;
     width: 144px;
-    background: url(logo.jpg) no-repeat left center;
+    background: url(logo.png) no-repeat left center;
     background-size: 144px 50px;
   }
   
@@ -41,7 +46,7 @@ body {
   & .am-nav > li > a:focus,
   & .am-nav > li > a:hover {
     border-radius: 0;
-    color: #0e90d2;
+    color: $color;
     background: 0 0;
   }
   
@@ -57,8 +62,8 @@ body {
   overflow: hidden;
   position: relative;
   width: 100%;
-  padding: 65px 0 15px;
-  background-color: #fff;
+  padding: 85px 0 45px;
+  background-color: #bbb;
   border-top: 1px solid #ddd;
   text-align: center;
   color: #000;
@@ -70,7 +75,7 @@ body {
     transform: translateX(-50%);
     width: 250px;
     height: 150px;
-    background-color: #0e90d2;
+    background-color: $color;
     border-radius: 100%;
     line-height: 230px;
     color: #fff;
@@ -90,8 +95,14 @@ body {
     float: left!important;
   }
 
-  &:hover > .image {
-    background-size: 150%;
+  &:hover > a {
+    & > .image {
+      background-size: 150%;
+    }
+
+    & > .title {
+      text-decoration: underline;
+    }
   }
 
   & > .info {
@@ -99,27 +110,25 @@ body {
     color: #000;
     font-size: 14px;
   }
+  
+  & > a {
+    & > .image {
+      transition: background-size 1s;
+      width: 100%;
+      height: 250px;
+      background-image: url(preload.png);
+      background-repeat: no-repeat;
+      background-size: 130%;
+      background-position: center center;
+    }
 
-  & > .image {
-    transition: background-size 1s;
-    width: 100%;
-    height: 250px;
-    background-image: url(preload.png);
-    background-repeat: no-repeat;
-    background-size: 130%;
-    background-position: center center;
-  }
-
-  & > .title {
-    box-sizing: border-box;
-    display: block;
-    margin: 10px 0;
-    border-left: 5px solid #0e90d2;
-    padding-left: 1em;
-    color: #000;
-    
-    &:hover {
-      text-decoration: underline;
+    & > .title {
+      box-sizing: border-box;
+      display: block;
+      margin: 10px 0;
+      border-left: 5px solid $color;
+      padding-left: 1em;
+      color: #000;
     }
   }
 }
