@@ -1,6 +1,13 @@
 class AdminController < ApplicationController
   layout 'admin'
   skip_before_filter :verify_authenticity_token
+  before_action :authenticate_user!, except: [:index]
+
+  def authenticate_user!
+    if !session[:user]
+      redirect_to '/admin'
+    end
+  end
 
   def index
     session[:user] = nil
