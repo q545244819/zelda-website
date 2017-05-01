@@ -14,4 +14,11 @@ class AdminController < ApplicationController
       .limit(20)
       .paginate(page: params[:page || 1])
   end
+
+  def categories
+    @name = 'categories'
+    @categories = Category.order(created_at: :desc)
+      .limit(20)
+      .paginate(page: params[:page || 1])
+  end
 end
