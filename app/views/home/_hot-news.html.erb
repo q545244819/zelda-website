@@ -1,15 +1,28 @@
 <section class="am-g hot-news-wrap" id="home">
   <% for i in 0..2 %>
-    <% if i == 0 %>
-    <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-6 primary" href="/articles/<%= articles[i].id %>">    
+    <% if articles[i] %>
+      <% if i == 0 %>
+        <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-6 primary" href="/articles/<%= articles[i].id %>">    
+        <% else %>
+        <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-3 second" href="/articles/<%= articles[i].id %>">        
+        <% end %>
+          <div class="info-warp">
+            <h1 class="title"><%= articles[i].title %></h1>
+            <p class="sub-info">发布时间：<%= articles[i].created_at.to_formatted_s(:db) %><span class="am-badge am-badge-primary am-radius"><%= articles[i].category.name %></span></p>
+          </div>
+        </a>
     <% else %>
-    <a <% if articles[i].image %>style="background-image: url(<%= articles[i].image %>)"<% end %> class="am-u-sm-3 second" href="/articles/<%= articles[i].id %>">        
+      <% if i == 0 %>
+        <a class="am-u-sm-6 primary">    
+        <% else %>
+        <a class="am-u-sm-3 second">        
+        <% end %>
+          <div class="info-warp">
+            <h1 class="title">其实标题的是空</h1>
+            <p class="sub-info">发布时间：猴年马月<span class="am-badge am-badge-primary am-radius">木有</span></p>
+          </div>
+        </a>
     <% end %>
-      <div class="info-warp">
-        <h1 class="title"><%= articles[i].title %></h1>
-        <p class="sub-info">发布时间：<%= articles[i].created_at.to_formatted_s(:db) %><span class="am-badge am-badge-primary am-radius"><%= articles[i].category.name %></span></p>
-      </div>
-    </a>
   <% end %>
 </section>
 
@@ -28,5 +41,5 @@
     </section>
   </section>
 <% else %>
-  <%= render 'nothing' %>
+  <%= render 'components/nothing' %>
 <% end %>
