@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   get '/about', to: 'about#index'
   get '/admin', to: 'admin#index'
   get '/admin/articles', to: 'admin#articles'
+  get '/admin/articles/new', to: 'admin#article_new'
+  post '/admin/articles/new', to: 'admin#article_create'
   get '/admin/articles/:id', to: 'admin#article_edit'
   post '/admin/articles/:id', to: 'admin#article_update'
   get '/admin/categories', to: 'admin#categories'
