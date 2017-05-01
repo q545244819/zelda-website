@@ -5,7 +5,7 @@ class AdminController < ApplicationController
   def index
     session[:user] = nil
     @user = User.take
-    @path = @user > 0 ? '/login' : '/register'
+    @path = @user ? '/login' : '/register'
   end
 
   def articles

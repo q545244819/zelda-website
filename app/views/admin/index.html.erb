@@ -1,5 +1,5 @@
 <div class="admin-login-wrap">
-  <%= form_for 'users', url: @path, method: 'post', html: { class: 'am-form', data-am-validator } do |f| %>
+  <%= form_for 'users', url: @path, method: 'post', html: { class: 'am-form' }, data: {'am-validator': true} do |f| %>
     <fieldset>
       <legend>
         <% if @path == '/login' %>
@@ -11,11 +11,11 @@
 
       <div class="am-form-group">
         <%= label_tag :username, '用户名' %>
-        <%= text_field_tag :username %>
+        <%= text_field_tag :username, '', required: true %>
       </div>
       <div class="am-form-group">
         <%= label_tag :password, '密码' %>
-        <%= password_field_tag :password %>
+        <%= password_field_tag :password, '', required: true %>
       </div>
 
       <% if @path == '/login' %>
