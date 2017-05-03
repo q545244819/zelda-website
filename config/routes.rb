@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   get '/admin/articles/:id/remove', to: 'admin#article_destroy'
   get '/admin/categories', to: 'admin#categories'
   get '/admin/categories/:id', to: 'admin#category_edit'
-  post '/admin/categories/:id', to: 'admin#category_update'
+  post '/admin/categories/:id', to: 'categories#update'
   post '/register', to: 'users#register'
   post '/login', to: 'users#login'
   get '/logout', to: 'users#logout'
