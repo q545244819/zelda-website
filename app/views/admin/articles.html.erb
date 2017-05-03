@@ -22,7 +22,7 @@
           <td><%= item.updated_at.to_formatted_s(:db) %></td>
           <td>
             <a href="articles/<%= item.id %>" class="am-btn am-btn-primary am-radius am-btn-xs">编辑</a>
-            <a href="articles/<%= item.id %>/remove" class="am-btn am-btn-danger am-radius am-btn-xs">删除</a>
+            <a onclick="if(!confirm('真的要删除这篇文章吗？')) return false" href="articles/<%= item.id %>/remove" class="am-btn am-btn-danger am-radius am-btn-xs">删除</a>
           </td>
         </tr>
       <% end %>
