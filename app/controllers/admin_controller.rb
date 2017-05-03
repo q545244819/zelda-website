@@ -92,8 +92,35 @@ class AdminController < ApplicationController
       .paginate(page: params[:page || 1])
   end
 
+  def category_edit
+    @category = Category.find(params[:id])
+
+    render 'category'
+  end
+
+  def category_update
+    category = Category.find(params[:id])
+
+    category.name = category_params[:name]
+    category.image = category_params[:image]
+    category.description = category_params[:description]
+
+    @new = category.save
+
+    if @new
+      flash[:success] = '更新类别成功！'
+      redirect_to "/admin/categories/#{params[:id]}"
+    else
+      flash[:error] = '更新文类别失败！'
+      redirect_to "/admin/categories/#{params[:id]}"
+    end
+  end
+
   private
     def article_params
       params.permit(:title, :image, :category_id, :body)
+    end
+    def category_params
+      params.permit(:name, :image, :description)
     end
 end

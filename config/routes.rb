@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post '/admin/articles/:id', to: 'admin#article_update'
   get '/admin/articles/:id/remove', to: 'admin#article_destroy'
   get '/admin/categories', to: 'admin#categories'
+  get '/admin/categories/:id', to: 'admin#category_edit'
+  post '/admin/categories/:id', to: 'admin#category_update'
   post '/register', to: 'users#register'
   post '/login', to: 'users#login'
   get '/logout', to: 'users#logout'
