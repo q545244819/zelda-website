@@ -1,12 +1,13 @@
 class UsersController < ApplicationController
   require 'digest/md5'
+  skip_before_filter :verify_authenticity_token
 
   def register
     user = User.find_by(user_body)
     categories = Category.all
 
     if user == nil
-      @user = User.create(user_body)
+      user = User.create(user_body)
     end
 
     if categories.length == 0
@@ -25,6 +26,9 @@ class UsersController < ApplicationController
         }
       ])
     end
+
+    session[:user] = user
+    redirect_to '/admin/articles'
   end
 
   def login
