@@ -3,9 +3,27 @@ class UsersController < ApplicationController
 
   def register
     user = User.find_by(user_body)
+    categories = Category.all
 
     if user == nil
       @user = User.create(user_body)
+    end
+
+    if categories.length == 0
+      Category.create([
+        {
+          name: '无人机',
+          description: 'uav'
+        },
+        {
+          name: '机器学习',
+          description: 'machine learning'
+        },
+        {
+          name: '人工智能',
+          description: 'artificial intelligence'
+        }
+      ])
     end
   end
 

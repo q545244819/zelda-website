@@ -1,4 +1,9 @@
 <div class="admin-login-wrap">
+  <% if @path == '/register' %>
+    <div class="am-alert am-alert-warning admin-alert">
+      <p>还没有管理员账号，请注册一个！</p>
+    </div>
+  <% end %>
   <%= form_for 'users', url: @path, method: 'post', html: { class: 'am-form' }, data: {'am-validator': true} do |f| %>
     <fieldset>
       <legend>
