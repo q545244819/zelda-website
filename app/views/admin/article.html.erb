@@ -1,5 +1,5 @@
 <div class="am-container">
-  <%= form_for 'articles', method: @path, html: { class: 'am-form' }, data: {'am-validator': true} do |f| %>
+  <%= form_for 'articles', url: @path, method: 'post', html: { class: 'am-form' }, data: {'am-validator': true} do |f| %>
     <% if @article != '' %>
       <div class="am-form-group">
         <%= label_tag :title, '标题' %>
