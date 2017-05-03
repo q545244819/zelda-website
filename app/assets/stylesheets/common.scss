@@ -7,6 +7,9 @@ body {
 .am-topbar-nav > li:hover > a:after {
   opacity: 0;
 }
+.am-topbar-nav > li.am-active > a {
+  color: $color;
+}
 .am-topbar-nav > li.am-active > a:after {
   opacity: 0;
 }
