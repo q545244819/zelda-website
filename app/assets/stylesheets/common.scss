@@ -183,3 +183,17 @@ body {
     margin-right: 5px;
   }
 }
+
+.totop {
+  display: none;
+  cursor: pointer;
+  position: fixed;
+  z-index: 2;
+  bottom: 15px;
+  right: 10px;
+
+  & > img {
+    width: 40px;
+    height: 40px;
+  }
+}

@@ -19,7 +19,8 @@
   <body>
     <%= render "components/topbar" %>
     <%= yield %>
-    <%= render "components/footer" %>    
+    <%= render "components/footer" %>
+    <a class="totop" id="js-totop"><%= image_tag 'totop.png' %></a>
     <%= javascript_include_tag 'application', 'amazeui.min', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>
