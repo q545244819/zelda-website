@@ -95,11 +95,11 @@
   width: 66px;
   margin: 30px auto 55px;
   background-color: transparent;
-  color: #0e90d2!important;
+  border-color: #909090;
+  color: #909090!important;
 
   &:hover {
-    border-color: #0c79b1;
-    background-color: transparent;
-    color: #0c79b1!important;
+    border-color: #717171;
+    background-color: transparent;    
   }
 }

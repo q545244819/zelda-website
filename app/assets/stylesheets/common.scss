@@ -62,25 +62,33 @@ body {
   overflow: hidden;
   position: relative;
   width: 100%;
-  padding: 85px 0 45px;
-  background-color: #bbb;
+  padding: 75px 0 15px;
+  background-color: #717071;
   border-top: 1px solid #ddd;
   text-align: center;
-  color: #000;
+  color: #c8c9ca;
+  
+  & a {
+    color: #c8c9ca;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 
   & > .circle {
     position: absolute;
-    top: -95px;
+    top: -188px;
     left: 50%;
     transform: translateX(-50%);
     width: 250px;
-    height: 150px;
+    height: 250px;
     background-color: $color;
     border-radius: 100%;
-    line-height: 230px;
+    line-height: 420px;
     color: #fff;
-    font-weight: bold;
-    font-size: 32px;
+    font-weight: 500;
+    font-size: 26px;
   }
 
   & > p {
@@ -112,6 +120,7 @@ body {
     color: #909090;
     
     & > span {
+      font-weight: bold;
       color: #888;
     }
   }
