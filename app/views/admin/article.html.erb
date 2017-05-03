@@ -31,7 +31,9 @@
       <div class="am-form-group">
         <%= label_tag :body, '正文（图片只能使用网络图片）' %>
         <script type="text/plain" id="myEditor" style="width:1000px;height:240px;">
-          <%= @article.body.html_safe %>
+          <% if @article.body %>
+            <%= @article.body.html_safe %>            
+          <% end %>
         </script>
       </div>
     <% else %>
