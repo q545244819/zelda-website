@@ -3,7 +3,7 @@
     transition: background-size 1s;
     position: relative;
     height: 400px;
-    background-image: url(preload.png);
+    background-image: image-url("preload.png");
     background-position: center center;
     background-repeat: no-repeat;
     overflow : hidden;
@@ -78,16 +78,6 @@
     color: #fff;
     text-transform: uppercase;
     text-shadow: 1px 1px 1px #333;
-
-    &.uav {
-      background-image: url(1-96.jpg);
-    }
-    &.ml {
-      background-image: url(ml.jpg);
-    }
-    &.ai {
-      background-image: url(ai.jpg);
-    }
   }
 }
 
